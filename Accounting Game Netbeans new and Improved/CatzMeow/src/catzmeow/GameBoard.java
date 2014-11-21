@@ -1065,23 +1065,23 @@ if(counter==0 && Problem ==1){
 }
                 //System.out.print("Correct");
                 JOptionPane.showMessageDialog(null,"Congrats!! You are correct.","Correct",JOptionPane.WARNING_MESSAGE);
-            }else if (counter == 2){
+            }else if (counter == 24){
                 JOptionPane.showMessageDialog(null,"Sorry... you are out of tries.","Incorrect",JOptionPane.WARNING_MESSAGE);
                 btnSubmitAnswer.setEnabled(false);
                 Problem +=1;
                 
             }else{
                                 if (!test.equals(CorrectDebit) && (!credit.equals(CorrectCredit)) && !CreditB.equals(CreditBalance) && !DebitB.equals(DebitBalance)){
-                    
+                    JOptionPane.showMessageDialog(null,"Sorry, Nothing is Correct","Incorrect",JOptionPane.WARNING_MESSAGE);
                 }
                 else if (!test.equals(CorrectDebit) && (!credit.equals(CorrectCredit)) && !CreditB.equals(CreditBalance) && DebitB.equals(DebitBalance)){
-                    
+                    JOptionPane.showMessageDialog(null,"Sorry, Only the Debit Balance is Correct","Incorrect",JOptionPane.WARNING_MESSAGE);
                 }
                 else if(!test.equals(CorrectDebit) && (!credit.equals(CorrectCredit)) && CreditB.equals(CreditBalance) && !DebitB.equals(DebitBalance)){
-                    
+                    JOptionPane.showMessageDialog(null,"Sorry, Only the Credit Balance is Correct","Incorrect",JOptionPane.WARNING_MESSAGE);
                 }
                 else if(!test.equals(CorrectDebit) && (credit.equals(CorrectCredit)) && !CreditB.equals(CreditBalance) && !DebitB.equals(DebitBalance)){
-                
+                JOptionPane.showMessageDialog(null,"Sorry, Only the Credit ComboBox is Correct","Incorrect",JOptionPane.WARNING_MESSAGE);
             }
                 else if(test.equals(CorrectDebit) && (!credit.equals(CorrectCredit)) && !CreditB.equals(CreditBalance) && !DebitB.equals(DebitBalance)){
                     JOptionPane.showMessageDialog(null,"Sorry, Only the Debit ComboBox is Incorrect","Incorrect",JOptionPane.WARNING_MESSAGE);
@@ -1119,7 +1119,6 @@ if(counter==0 && Problem ==1){
                                 cboDebit.setEnabled(true);
         cboCredit.setEnabled(true);
                 counter +=1;
-JOptionPane.showMessageDialog(null,"sorry... Try again","Incorrect",JOptionPane.WARNING_MESSAGE);
         
         txtCredit.setEnabled(true);
         txtDebit.setEnabled(true);
