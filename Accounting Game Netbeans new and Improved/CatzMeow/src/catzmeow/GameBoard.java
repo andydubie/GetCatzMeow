@@ -62,14 +62,14 @@ lblScore.setText(strScore);
 
 txtJournal.setText("You invest $10,000 to start your mobile pet grooming business");
 
-String[] FirstDebit = new String[] {"Interest Expense", "Cash=Correct", "Contributed Capital", "Unearned Revenue"};
+String[] FirstDebit = new String[] {"Interest Expense", "Cash", "Contributed Capital", "Unearned Revenue"};
 cboDebit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
 for (Object item : FirstDebit) {
     cboDebit.addItem(item);
 }
     
 
-String[] FirstCredit = new String[] {"Interest Expense", "Cash", "Contributed Capital=Correct", "Unearned Revenue"};
+String[] FirstCredit = new String[] {"Interest Expense", "Cash", "Contributed Capital", "Unearned Revenue"};
 cboCredit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
 for (Object item : FirstCredit) {
     cboCredit.addItem(item);
@@ -124,8 +124,10 @@ btnExit.setEnabled(false);
         radPrepaid = new javax.swing.JRadioButton();
         radPayPerMonth = new javax.swing.JRadioButton();
         btnExit = new javax.swing.JButton();
+        btnLoan = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1352, 818));
 
         btnSubmitAnswer.setText("Submit");
         btnSubmitAnswer.addActionListener(new java.awt.event.ActionListener() {
@@ -183,7 +185,10 @@ btnExit.setEnabled(false);
         );
         panel1Layout.setVerticalGroup(
             panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(panel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(72, 72, 72))
         );
 
         btnRoll.setText("Roll");
@@ -203,6 +208,13 @@ btnExit.setEnabled(false);
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExitActionPerformed(evt);
+            }
+        });
+
+        btnLoan.setText("Loan");
+        btnLoan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoanActionPerformed(evt);
             }
         });
 
@@ -233,52 +245,57 @@ btnExit.setEnabled(false);
                         .addGap(52, 52, 52)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(cboDebit, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(45, 45, 45)
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(btnRoll, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblRoll)
+                                .addGap(114, 114, 114))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(cboDebit, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(45, 45, 45)
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel7))
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(128, 128, 128)
-                        .addComponent(jLabel1)
-                        .addContainerGap())
+                                        .addGap(76, 76, 76)
+                                        .addComponent(jLabel1))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(38, 38, 38)
+                                        .addComponent(btnLoan)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnExit)
+                                .addGap(67, 67, 67))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(48, 48, 48)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(40, 40, 40))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(layout.createSequentialGroup()
                                             .addComponent(jLabel8)
                                             .addGap(105, 105, 105))
                                         .addGroup(layout.createSequentialGroup()
-                                            .addComponent(cboCredit, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(lblRoll)
-                                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                            .addComponent(btnSubmitAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(100, 100, 100)))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btnSubmitAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(100, 100, 100)))
+                                        .addGap(43, 43, 43)
+                                        .addComponent(cboCredit, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(43, 43, 43)
+                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(36, 36, 36))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(lblJournal)
                                 .addGap(100, 100, 100))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnExit)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(radPrepaid)
-                                        .addGap(83, 83, 83)
-                                        .addComponent(radPayPerMonth)))
+                                .addComponent(radPrepaid)
+                                .addGap(83, 83, 83)
+                                .addComponent(radPayPerMonth)
                                 .addContainerGap())))))
             .addComponent(lblCompanyName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -292,7 +309,7 @@ btnExit.setEnabled(false);
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblJournal))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -316,19 +333,23 @@ btnExit.setEnabled(false);
                             .addComponent(cboDebit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(51, 51, 51)
-                        .addComponent(jLabel8)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cboCredit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(39, 39, 39)
-                        .addComponent(btnSubmitAnswer)
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnRoll)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cboCredit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(39, 39, 39)
+                                .addComponent(btnSubmitAnswer)
+                                .addGap(43, 43, 43)
+                                .addComponent(btnRoll))
                             .addComponent(lblRoll))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnExit)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnLoan)
+                            .addComponent(btnExit))
+                        .addGap(54, 54, 54)))
                 .addContainerGap())
         );
 
@@ -394,7 +415,7 @@ for (Object item : Credit) {
                 cboCredit.setSelectedIndex(-1);
                 counter = 0;
                 
-                String[] Debit2 = { "Unearned Revenue", "Wages Expense", "Interest Expense=correct", "Cash"};
+                String[] Debit2 = { "Unearned Revenue", "Wages Expense", "Interest Expense", "Cash"};
 cboDebit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
                // JComboBox<String> cboDebit = new JComboBox<>(Debit);
                 //add to the parent container (e.g. a JFrame):
@@ -403,7 +424,7 @@ for (Object item : Debit2) {
 }
 
                               
-                String[] Credit2 = new String[] {"Interest Expense", "Cash = Correct", "Accounts Recievable", "Unearned Revenue"};
+                String[] Credit2 = new String[] {"Interest Expense", "Cash", "Accounts Recievable", "Unearned Revenue"};
 
                 cboCredit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
 
@@ -425,7 +446,7 @@ CorrectCredit=Credit2[1];
                 cboCredit.setSelectedIndex(-1);
                 counter = 0;
                 
-                String[] Debit3 = { "Cash", "Equipment=Correct", "Wages Expense", "Professional Fees Expense"};
+                String[] Debit3 = { "Cash", "Equipment", "Wages Expense", "Professional Fees Expense"};
                           
 cboDebit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
             
@@ -434,7 +455,7 @@ for (Object item : Debit3) {
 }                        
 
 
-String[] Credit3 = new String[] {"Interest Expense", "Notes Payable", "Accounts Recievable", "Cash=Correct"};
+String[] Credit3 = new String[] {"Interest Expense", "Notes Payable", "Accounts Recievable", "Cash"};
 
                cboCredit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
 
@@ -443,8 +464,8 @@ for (Object item : Credit3) {
 }
 CorrectDebit=Debit3[1];
 CorrectCredit=Credit3[3];
-                 CreditBalance = "25000";
-                 DebitBalance = "5000";
+                 CreditBalance = "5000";
+                 DebitBalance = "25000";
                  Cashbalance=-5000;
                 break;
                     
@@ -457,7 +478,7 @@ CorrectCredit=Credit3[3];
                  cboCredit.setSelectedIndex(-1);
                 counter = 0;
                 
-                String[] Debit4 = { "Supplies", "Equipment=Correct", "Wages Expense", "Cash"};
+                String[] Debit4 = { "Supplies", "Equipment", "Wages Expense", "Cash"};
 
                  txtJournal.setText(JournalEntry);
                 cboDebit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
@@ -467,7 +488,7 @@ for (Object item : Debit4) {
     cboDebit.addItem(item);
 }
 
-String[] Credit4 = new String[] {"Cash=Correct", "Notes Payable", "Accounts Recievable", "Interest Expense"};
+String[] Credit4 = new String[] {"Cash", "Notes Payable", "Accounts Recievable", "Interest Expense"};
 
                cboCredit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
 
@@ -488,7 +509,7 @@ for (Object item : Credit4) {
                 cboCredit.setSelectedIndex(-1);
                 counter = 0;
                 
-                String[] Debit5 = { "Supplies Expense", "Supplies", "Cash", "Equipment=Correct"};
+                String[] Debit5 = { "Supplies Expense", "Supplies", "Cash", "Equipment"};
 cboDebit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
                // JComboBox<String> cboDebit = new JComboBox<>(Debit);
                 //add to the parent container (e.g. a JFrame):
@@ -496,7 +517,7 @@ for (Object item : Debit5) {
     cboDebit.addItem(item);
 }
 
-String[] Credit5 = new String[] {"Interest Expense", "Cash=Correct", "Accounts Recievable", "Notes Payable"};
+String[] Credit5 = new String[] {"Interest Expense", "Cash", "Accounts Recievable", "Notes Payable"};
 
                cboCredit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
 
@@ -517,7 +538,7 @@ for (Object item : Credit5) {
                 cboCredit.setSelectedIndex(-1);
                 counter = 0;
                 
-                String[] Debit6 = { "Supplies=Correct", "Cash", "Equipment", "Supplies Expense"};
+                String[] Debit6 = { "Supplies", "Cash", "Equipment", "Supplies Expense"};
 cboDebit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
                // JComboBox<String> cboDebit = new JComboBox<>(Debit);
                 //add to the parent container (e.g. a JFrame):
@@ -526,7 +547,7 @@ for (Object item : Debit6) {
     cboDebit.addItem(item);
 }
 
-String[] Credit6 = new String[] {"Interest Expense", "Notes Payable", "Accounts Recievable", "Cash=Correct"};
+String[] Credit6 = new String[] {"Interest Expense", "Notes Payable", "Accounts Recievable", "Cash"};
 
                cboCredit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
 
@@ -549,7 +570,7 @@ for (Object item : Credit6) {
                  
 cboCredit.setSelectedIndex(-1);
                 
-                String[] Debit7 = { "Grooming Revenue", "Accounts Receivable", "Cash=Correct", "Unearned Revenue"};
+                String[] Debit7 = { "Grooming Revenue", "Accounts Receivable", "Cash", "Unearned Revenue"};
 cboDebit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
                // JComboBox<String> cboDebit = new JComboBox<>(Debit);
                 //add to the parent container (e.g. a JFrame):
@@ -557,7 +578,7 @@ for (Object item : Debit7) {
     cboDebit.addItem(item);
 }
 
-String[] Credit7 = new String[] {"Interest Expense", "Grooming Revenue=Correct", "Accounts Recievable", "Cash"};
+String[] Credit7 = new String[] {"Interest Expense", "Grooming Revenue", "Accounts Recievable", "Cash"};
 
                cboCredit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
 
@@ -580,7 +601,7 @@ for (Object item : Credit7) {
                  
 cboCredit.setSelectedIndex(-1);
                 
-                String[] Debit8 = { "Cash", "Unearned Revenue", "Grooming Revenue", "Accounts Recievable=correct"};
+                String[] Debit8 = { "Cash", "Unearned Revenue", "Grooming Revenue", "Accounts Recievable"};
 cboDebit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
                // JComboBox<String> cboDebit = new JComboBox<>(Debit);
                 //add to the parent container (e.g. a JFrame):
@@ -588,7 +609,7 @@ for (Object item : Debit8) {
     cboDebit.addItem(item);
 }
 
-String[] Credit8 = new String[] {"Interest Expense", "Notes Payable", "Grooming Revenue=Correct", "Cash"};
+String[] Credit8 = new String[] {"Interest Expense", "Notes Payable", "Grooming Revenue", "Cash"};
 
                cboCredit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
 
@@ -611,14 +632,14 @@ for (Object item : Credit8) {
                  
 cboCredit.setSelectedIndex(-1);
                 
-                String[] Debit9 = { "Notes Payable", "Cash=Correct", "Unearned Revenue", "Accounts Recievable"};
+                String[] Debit9 = { "Notes Payable", "Cash", "Unearned Revenue", "Accounts Recievable"};
 cboDebit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
                // JComboBox<String> cboDebit = new JComboBox<>(Debit);
                 //add to the parent container (e.g. a JFrame):
 for (Object item : Debit9) {
     cboDebit.addItem(item);
 }
-String[] Credit9 = new String[] {"Unearned Revenue=Correct", "Notes Payable", "Accounts Recievable", "Cash"};
+String[] Credit9 = new String[] {"Unearned Revenue", "Notes Payable", "Accounts Recievable", "Cash"};
 
                cboCredit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
 
@@ -641,7 +662,7 @@ for (Object item : Credit9) {
                  
 cboCredit.setSelectedIndex(-1);
                 
-                String[] Debit10 = { "Cash", "Professional Fee Expense", "Accounts Payable", "Wages Expense=Correct"};
+                String[] Debit10 = { "Cash", "Professional Fee Expense", "Accounts Payable", "Wages Expense"};
 cboDebit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
                // JComboBox<String> cboDebit = new JComboBox<>(Debit);
                 //add to the parent container (e.g. a JFrame):
@@ -649,7 +670,7 @@ for (Object item : Debit10) {
     cboDebit.addItem(item);
 }        
 
-String[] Credit10 = new String[] {"Interest Expense", "Notes Payable", "Accounts Recievable", "Cash=Correct"};
+String[] Credit10 = new String[] {"Interest Expense", "Notes Payable", "Accounts Recievable", "Cash"};
 
                cboCredit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
 
@@ -672,14 +693,14 @@ for (Object item : Credit10) {
                  
 cboCredit.setSelectedIndex(-1);
                 
-                String[] Debit11 = { "Automobile Expense=Correct", "Cash", "Accounts Payable", "Wages Expense"};
+                String[] Debit11 = { "Automobile Expense", "Cash", "Accounts Payable", "Wages Expense"};
 cboDebit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
                // JComboBox<String> cboDebit = new JComboBox<>(Debit);
                 //add to the parent container (e.g. a JFrame):
 for (Object item : Debit11) {
     cboDebit.addItem(item);
 }     
-String[] Credit11 = new String[] {"Interest Expense", "Notes Payable", "Accounts Payable=Correct", "Cash"};
+String[] Credit11 = new String[] {"Interest Expense", "Notes Payable", "Accounts Payable", "Cash"};
 
                cboCredit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
 
@@ -702,14 +723,14 @@ for (Object item : Credit11) {
                  
 cboCredit.setSelectedIndex(-1);
                 
-                String[] Debit12 = { "Advertising Exspense=Correct", "Accounts Payable", "Wages Expense", "Cash"};
+                String[] Debit12 = { "Advertising Exspense", "Accounts Payable", "Wages Expense", "Cash"};
 cboDebit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
                // JComboBox<String> cboDebit = new JComboBox<>(Debit);
                 //add to the parent container (e.g. a JFrame):
 for (Object item : Debit12) {
     cboDebit.addItem(item);
 }
-String[] Credit12 = new String[] {"Accounts Payable=Correct", "Notes Payable", "Accounts Recievable", "Cash=Correct"};
+String[] Credit12 = new String[] {"Accounts Payable", "Notes Payable", "Accounts Recievable", "Cash=Correct"};
 
                cboCredit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
 
@@ -734,14 +755,14 @@ for (Object item : Credit12) {
                  
 cboCredit.setSelectedIndex(-1);
                 
-                String[] Debit13 = {"Wages Expense","Prepaid Insurance=Correct", "Accounts Payable", "Interest Expense"};
+                String[] Debit13 = {"Wages Expense","Prepaid Insurance", "Accounts Payable", "Interest Expense"};
 cboDebit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
                // JComboBox<String> cboDebit = new JComboBox<>(Debit);
                 //add to the parent container (e.g. a JFrame):
 for (Object item : Debit13) {
     cboDebit.addItem(item);
 }       
-String[] Credit13 = new String[] {"Interest Expense", "Notes Payable", "Accounts Recievable", "Cash=Correct"};
+String[] Credit13 = new String[] {"Interest Expense", "Notes Payable", "Accounts Recievable", "Cash"};
 
                cboCredit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
 
@@ -764,14 +785,14 @@ for (Object item : Credit13) {
                  
 cboCredit.setSelectedIndex(-1);
                 
-                String[] Debit14 = { "Supplies", "Cash", "Supplies Expense=Correct", "Equipment"};
+                String[] Debit14 = { "Supplies", "Cash", "Supplies Expense", "Equipment"};
 cboDebit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
                // JComboBox<String> cboDebit = new JComboBox<>(Debit);
                 //add to the parent container (e.g. a JFrame):
 for (Object item : Debit14) {
     cboDebit.addItem(item);
 }
-String[] Credit14 = new String[] {"Supplies=Correct", "Notes Payable", "Supplies Expense", "Cash"};
+String[] Credit14 = new String[] {"Supplies", "Notes Payable", "Supplies Expense", "Cash"};
 
                cboCredit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
 
@@ -793,14 +814,14 @@ for (Object item : Credit14) {
                  
 cboCredit.setSelectedIndex(-1);
                  
-                String[] Debit15 = { "Cash", "Accounts Recievable", "Grooming Revenue", "Unearned Revenue=Correct"};
+                String[] Debit15 = { "Cash", "Accounts Recievable", "Grooming Revenue", "Unearned Revenue"};
 cboDebit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
                // JComboBox<String> cboDebit = new JComboBox<>(Debit);
                 //add to the parent container (e.g. a JFrame):
 for (Object item : Debit15) {
     cboDebit.addItem(item);
 }     
-String[] Credit15 = new String[] {"Interest Expense", "Grooming Revenue=Correct", "Accounts Recievable", "Cash"};
+String[] Credit15 = new String[] {"Interest Expense", "Grooming Revenue", "Accounts Recievable", "Cash"};
 
                cboCredit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
 
@@ -822,14 +843,14 @@ for (Object item : Credit15) {
                  
 cboCredit.setSelectedIndex(-1);
                 
-                String[] Debit16 = { "Depreciation Expense", "Professional Fees Expense=Correct", "Accounts Payable", "Cash"};
+                String[] Debit16 = { "Depreciation Expense", "Professional Fees Expense", "Accounts Payable", "Cash"};
 cboDebit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
                // JComboBox<String> cboDebit = new JComboBox<>(Debit);
                 //add to the parent container (e.g. a JFrame):
 for (Object item : Debit16) {
     cboDebit.addItem(item);
 }      
-String[] Credit16 = new String[] {"Interest Expense", "Notes Payable", "Accounts Recievable", "Cash=Correct"};
+String[] Credit16 = new String[] {"Interest Expense", "Notes Payable", "Accounts Recievable", "Cash"};
 
                cboCredit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
 
@@ -851,14 +872,14 @@ for (Object item : Credit16) {
                  
 cboCredit.setSelectedIndex(-1);
                 
-                String[] Debit17 = {"Professional Fees Expense", "Telephone Expense=correct", "Accounts Payable", "Cash" };
+                String[] Debit17 = {"Professional Fees Expense", "Telephone Expense", "Accounts Payable", "Cash" };
 cboDebit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
                // JComboBox<String> cboDebit = new JComboBox<>(Debit);
                 //add to the parent container (e.g. a JFrame):
 for (Object item : Debit17) {
     cboDebit.addItem(item);
 }    
-String[] Credit17 = new String[] {"Cash=Correct", "Notes Payable", "Accounts Recievable", "Interest Expense"};
+String[] Credit17 = new String[] {"Cash", "Notes Payable", "Accounts Recievable", "Interest Expense"};
 
                cboCredit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
 
@@ -881,14 +902,14 @@ for (Object item : Credit17) {
                  
 cboCredit.setSelectedIndex(-1);
                 
-                String[] Debit18 = { "Depreciation Expense=Correct", "Wages Expense", "Accounts Payable", "Interest Expense"};
+                String[] Debit18 = { "Depreciation Expense", "Wages Expense", "Accounts Payable", "Interest Expense"};
 cboDebit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
                // JComboBox<String> cboDebit = new JComboBox<>(Debit);
                 //add to the parent container (e.g. a JFrame):
 for (Object item : Debit18) {
     cboDebit.addItem(item);
 }
-String[] Credit18 = new String[] {"Interest Expense", "Accumulated Depreciation - Equipment=Correct", "Accounts Recievable", "Cash"};
+String[] Credit18 = new String[] {"Interest Expense", "Accumulated Depreciation - Equipment", "Accounts Recievable", "Cash"};
 
                cboCredit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
 
@@ -911,14 +932,14 @@ for (Object item : Credit18) {
                  
 cboCredit.setSelectedIndex(-1);
                 
-                String[] Debit19 = {"Notes Payable", "Automobile Expense=Correct", "Cash", "Accounts Payable" };
+                String[] Debit19 = {"Notes Payable", "Automobile Expense", "Cash", "Accounts Payable" };
  cboDebit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
                // JComboBox<String> cboDebit = new JComboBox<>(Debit);
                 //add to the parent container (e.g. a JFrame):
 for (Object item : Debit19) {
     cboDebit.addItem(item);
 }     
-String[] Credit19 = new String[] {"Interest Expense", "Notes Payable", "Accounts Recievable", "Cash=Correct"};
+String[] Credit19 = new String[] {"Interest Expense", "Notes Payable", "Accounts Recievable", "Cash"};
 
                cboCredit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
 
@@ -940,14 +961,14 @@ for (Object item : Credit19) {
                  
 cboCredit.setSelectedIndex(-1);
                 
-                String[] Debit20 = { "Depreciation Expense", "Professional Fee Expense", "Cash", "Accounts Payable=Correct"};
+                String[] Debit20 = { "Depreciation Expense", "Professional Fee Expense", "Cash", "Accounts Payable"};
 cboDebit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
                // JComboBox<String> cboDebit = new JComboBox<>(Debit);
                 //add to the parent container (e.g. a JFrame):
 for (Object item : Debit20) {
     cboDebit.addItem(item);
 }
-String[] Credit20 = new String[] {"Interest Expense", "Notes Payable", "Cash=Correct", "Accounts Recievable"};
+String[] Credit20 = new String[] {"Interest Expense", "Notes Payable", "Cash", "Accounts Recievable"};
 
                cboCredit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
 
@@ -969,14 +990,14 @@ for (Object item : Credit20) {
                  
 cboCredit.setSelectedIndex(-1);
                 
-                String[] Debit21 = { "Grooming Revenue", "Cash=Correct", "Accounts Recievable", "Unearned Revenue"};
+                String[] Debit21 = { "Grooming Revenue", "Cash", "Accounts Recievable", "Unearned Revenue"};
 cboDebit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
                // JComboBox<String> cboDebit = new JComboBox<>(Debit);
                 //add to the parent container (e.g. a JFrame):
 for (Object item : Debit21) {
     cboDebit.addItem(item);
 }
-String[] Credit21 = new String[] {"Interest Expense", "Notes Payable", "Accounts Recievable=Correct", "Cash"};
+String[] Credit21 = new String[] {"Interest Expense", "Notes Payable", "Accounts Recievable", "Cash"};
 
                cboCredit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
 
@@ -998,14 +1019,14 @@ for (Object item : Credit21) {
                  
 cboCredit.setSelectedIndex(-1);
                 
-                String[] Debit22 = { "Repairs and Maintenance Expense=Correct", "Depreciation Expense", "Automobile Expense", "Professional Fee Expense"};
+                String[] Debit22 = { "Repairs and Maintenance Expense", "Depreciation Expense", "Automobile Expense", "Professional Fee Expense"};
 cboDebit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
                // JComboBox<String> cboDebit = new JComboBox<>(Debit);
                 //add to the parent container (e.g. a JFrame):
 for (Object item : Debit22) {
     cboDebit.addItem(item);
 } 
-String[] Credit22 = new String[] {"Interest Expense", "Cash=Correct", "Accounts Recievable", "Notes Payable"};
+String[] Credit22 = new String[] {"Interest Expense", "Cash", "Accounts Recievable", "Notes Payable"};
 
                cboCredit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
 
@@ -1081,31 +1102,31 @@ if(counter==0 && Problem ==1){
                     JOptionPane.showMessageDialog(null,"Sorry, Only the Credit Balance is Correct","Incorrect",JOptionPane.WARNING_MESSAGE);
                 }
                 else if(!test.equals(CorrectDebit) && (credit.equals(CorrectCredit)) && !CreditB.equals(CreditBalance) && !DebitB.equals(DebitBalance)){
-                JOptionPane.showMessageDialog(null,"Sorry, Only the Credit ComboBox is Correct","Incorrect",JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null,"Sorry, Only the Credit Account is Correct","Incorrect",JOptionPane.WARNING_MESSAGE);
             }
                 else if(test.equals(CorrectDebit) && (!credit.equals(CorrectCredit)) && !CreditB.equals(CreditBalance) && !DebitB.equals(DebitBalance)){
-                    JOptionPane.showMessageDialog(null,"Sorry, Only the Debit ComboBox is Incorrect","Incorrect",JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null,"Sorry, Only the Debit Account is Incorrect","Incorrect",JOptionPane.WARNING_MESSAGE);
                 }
                 else if(!test.equals(CorrectDebit) && (!credit.equals(CorrectCredit)) && CreditB.equals(CreditBalance) && DebitB.equals(DebitBalance)){
                 JOptionPane.showMessageDialog(null,"Sorry, Only the Balances are Correct","Incorrect",JOptionPane.WARNING_MESSAGE);
             }
                 else if(!test.equals(CorrectDebit) && (credit.equals(CorrectCredit)) && !CreditB.equals(CreditBalance) && DebitB.equals(DebitBalance)){
-                    JOptionPane.showMessageDialog(null,"Sorry, Only the Credit ComboBox and Debit Balance are Correct","Incorrect",JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null,"Sorry, Only the Credit Account and Debit Balance are Correct","Incorrect",JOptionPane.WARNING_MESSAGE);
                 }
                 else if(!test.equals(CorrectDebit) && (credit.equals(CorrectCredit)) && CreditB.equals(CreditBalance) && !DebitB.equals(DebitBalance)){
-                    JOptionPane.showMessageDialog(null,"Sorry, Only the Credit ComboBox and Credit Balance are correct","Incorrect",JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null,"Sorry, Only the Credit Account and Credit Balance are correct","Incorrect",JOptionPane.WARNING_MESSAGE);
                 }
                 else if(test.equals(CorrectDebit) && (!credit.equals(CorrectCredit)) && !CreditB.equals(CreditBalance) && DebitB.equals(DebitBalance)){
-                    JOptionPane.showMessageDialog(null,"Sorry, Only the Debit ComboBox and Debit Balance are Correct","Incorrect",JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null,"Sorry, Only the Debit Account and Debit Balance are Correct","Incorrect",JOptionPane.WARNING_MESSAGE);
                 }
                 else if(test.equals(CorrectDebit) && (!credit.equals(CorrectCredit)) && CreditB.equals(CreditBalance) && !DebitB.equals(DebitBalance)){
                     JOptionPane.showMessageDialog(null,"Sorry, Only the Credit Balance and Debit ComboBox are correct","Incorrect",JOptionPane.WARNING_MESSAGE);
                 }
                 else if(test.equals(CorrectDebit) && (credit.equals(CorrectCredit)) && !CreditB.equals(CreditBalance) && !DebitB.equals(DebitBalance)){
-                JOptionPane.showMessageDialog(null,"Sorry, Only the ComboBoxes are Correct","Incorrect",JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null,"Sorry, Only the Accounts are Correct","Incorrect",JOptionPane.WARNING_MESSAGE);
             }
                 else if (test.equals(CorrectDebit) && (!credit.equals(CorrectCredit)) && CreditB.equals(CreditBalance) && DebitB.equals(DebitBalance)){
-                    JOptionPane.showMessageDialog(null,"Sorry, The Credit ComboBox is Incorrect","Incorrect",JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null,"Sorry, The Credit Account is Incorrect","Incorrect",JOptionPane.WARNING_MESSAGE);
                 }
                 else if(test.equals(CorrectDebit) && (credit.equals(CorrectCredit)) && CreditB.equals(CreditBalance) && !DebitB.equals(DebitBalance)){
                     JOptionPane.showMessageDialog(null,"Sorry, The Debit Balance is Incorrect","Incorrect",JOptionPane.WARNING_MESSAGE);
@@ -1114,7 +1135,7 @@ if(counter==0 && Problem ==1){
                     JOptionPane.showMessageDialog(null,"Sorry, The Credit Balance is Incorrect","Incorrect",JOptionPane.WARNING_MESSAGE);
                 }
                 else if (!test.equals(CorrectDebit) && (credit.equals(CorrectCredit)) && CreditB.equals(CreditBalance) && DebitB.equals(DebitBalance)){
-                    JOptionPane.showMessageDialog(null,"Sorry, The Debit ComboBox is Incorrect","Incorrect",JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null,"Sorry, The Debit Account is Incorrect","Incorrect",JOptionPane.WARNING_MESSAGE);
                 }
                                 cboDebit.setEnabled(true);
         cboCredit.setEnabled(true);
@@ -1154,6 +1175,11 @@ if(Problem==1){
         this.dispose();
     }//GEN-LAST:event_btnExitActionPerformed
 
+    private void btnLoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoanActionPerformed
+       Loan money=new Loan();
+       money.setVisible(true);
+    }//GEN-LAST:event_btnLoanActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1170,6 +1196,7 @@ if(Problem==1){
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton btnExit;
+    public javax.swing.JButton btnLoan;
     public javax.swing.JButton btnRoll;
     public javax.swing.JButton btnSubmitAnswer;
     public javax.swing.JComboBox cboCredit;
