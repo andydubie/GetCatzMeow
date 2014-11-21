@@ -65,6 +65,7 @@ public class Cats extends javax.swing.JFrame {
         lblCompanysNameEnter = new javax.swing.JLabel();
         btnSubmit = new javax.swing.JButton();
         CompanyName = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -94,6 +95,8 @@ public class Cats extends javax.swing.JFrame {
 
         CompanyName.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
+        jLabel1.setText("Version 1.0 (11/21/14)");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -105,7 +108,9 @@ public class Cats extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(200, 200, 200)
                 .addComponent(btnSubmit)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(87, 87, 87)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(81, 81, 81)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,7 +145,11 @@ public class Cats extends javax.swing.JFrame {
                         .addGap(13, 13, 13)
                         .addComponent(lblCompanysNameEnter)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                .addComponent(btnSubmit)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnSubmit)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -213,6 +222,7 @@ public class Cats extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JTextField CompanyName;
     public static javax.swing.JButton btnSubmit;
+    public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel lblCatzMeow;
     public javax.swing.JLabel lblCompanysNameEnter;
     public javax.swing.JLabel lblNameEnter;
