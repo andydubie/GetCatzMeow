@@ -18,7 +18,10 @@ import javax.swing.JTextField;
  * @author lpfliger
  */
 public class Cats extends javax.swing.JFrame {
+    
 
+    
+    
     static String getCompany(JTextField CompanyName) {
         String CompanyName2;
         CompanyName2 = CompanyName.getText();
@@ -196,6 +199,9 @@ public class Cats extends javax.swing.JFrame {
         }
         //</editor-fold>
         /* Create and display the form */
+ 
+            
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GameBoard().setVisible(true);
