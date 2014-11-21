@@ -1071,6 +1071,51 @@ if(counter==0 && Problem ==1){
                 Problem +=1;
                 
             }else{
+                                if (!test.equals(CorrectDebit) && (!credit.equals(CorrectCredit)) && !CreditB.equals(CreditBalance) && !DebitB.equals(DebitBalance)){
+                    
+                }
+                else if (!test.equals(CorrectDebit) && (!credit.equals(CorrectCredit)) && !CreditB.equals(CreditBalance) && DebitB.equals(DebitBalance)){
+                    
+                }
+                else if(!test.equals(CorrectDebit) && (!credit.equals(CorrectCredit)) && CreditB.equals(CreditBalance) && !DebitB.equals(DebitBalance)){
+                    
+                }
+                else if(!test.equals(CorrectDebit) && (credit.equals(CorrectCredit)) && !CreditB.equals(CreditBalance) && !DebitB.equals(DebitBalance)){
+                
+            }
+                else if(test.equals(CorrectDebit) && (!credit.equals(CorrectCredit)) && !CreditB.equals(CreditBalance) && !DebitB.equals(DebitBalance)){
+                    JOptionPane.showMessageDialog(null,"Sorry, Only the Debit ComboBox is Incorrect","Incorrect",JOptionPane.WARNING_MESSAGE);
+                }
+                else if(!test.equals(CorrectDebit) && (!credit.equals(CorrectCredit)) && CreditB.equals(CreditBalance) && DebitB.equals(DebitBalance)){
+                JOptionPane.showMessageDialog(null,"Sorry, Only the Balances are Correct","Incorrect",JOptionPane.WARNING_MESSAGE);
+            }
+                else if(!test.equals(CorrectDebit) && (credit.equals(CorrectCredit)) && !CreditB.equals(CreditBalance) && DebitB.equals(DebitBalance)){
+                    JOptionPane.showMessageDialog(null,"Sorry, Only the Credit ComboBox and Debit Balance are Correct","Incorrect",JOptionPane.WARNING_MESSAGE);
+                }
+                else if(!test.equals(CorrectDebit) && (credit.equals(CorrectCredit)) && CreditB.equals(CreditBalance) && !DebitB.equals(DebitBalance)){
+                    JOptionPane.showMessageDialog(null,"Sorry, Only the Credit ComboBox and Credit Balance are correct","Incorrect",JOptionPane.WARNING_MESSAGE);
+                }
+                else if(test.equals(CorrectDebit) && (!credit.equals(CorrectCredit)) && !CreditB.equals(CreditBalance) && DebitB.equals(DebitBalance)){
+                    JOptionPane.showMessageDialog(null,"Sorry, Only the Debit ComboBox and Debit Balance are Correct","Incorrect",JOptionPane.WARNING_MESSAGE);
+                }
+                else if(test.equals(CorrectDebit) && (!credit.equals(CorrectCredit)) && CreditB.equals(CreditBalance) && !DebitB.equals(DebitBalance)){
+                    JOptionPane.showMessageDialog(null,"Sorry, Only the Credit Balance and Debit ComboBox are correct","Incorrect",JOptionPane.WARNING_MESSAGE);
+                }
+                else if(test.equals(CorrectDebit) && (credit.equals(CorrectCredit)) && !CreditB.equals(CreditBalance) && !DebitB.equals(DebitBalance)){
+                JOptionPane.showMessageDialog(null,"Sorry, Only the ComboBoxes are Correct","Incorrect",JOptionPane.WARNING_MESSAGE);
+            }
+                else if (test.equals(CorrectDebit) && (!credit.equals(CorrectCredit)) && CreditB.equals(CreditBalance) && DebitB.equals(DebitBalance)){
+                    JOptionPane.showMessageDialog(null,"Sorry, The Credit ComboBox is Incorrect","Incorrect",JOptionPane.WARNING_MESSAGE);
+                }
+                else if(test.equals(CorrectDebit) && (credit.equals(CorrectCredit)) && CreditB.equals(CreditBalance) && !DebitB.equals(DebitBalance)){
+                    JOptionPane.showMessageDialog(null,"Sorry, The Debit Balance is Incorrect","Incorrect",JOptionPane.WARNING_MESSAGE);
+                }
+                else if(test.equals(CorrectDebit) && (credit.equals(CorrectCredit)) && !CreditB.equals(CreditBalance) && DebitB.equals(DebitBalance)){
+                    JOptionPane.showMessageDialog(null,"Sorry, The Credit Balance is Incorrect","Incorrect",JOptionPane.WARNING_MESSAGE);
+                }
+                else if (!test.equals(CorrectDebit) && (credit.equals(CorrectCredit)) && CreditB.equals(CreditBalance) && DebitB.equals(DebitBalance)){
+                    JOptionPane.showMessageDialog(null,"Sorry, The Debit ComboBox is Incorrect","Incorrect",JOptionPane.WARNING_MESSAGE);
+                }
                                 cboDebit.setEnabled(true);
         cboCredit.setEnabled(true);
                 counter +=1;
