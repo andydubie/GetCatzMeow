@@ -1084,9 +1084,12 @@ if(counter==0 && Problem ==1){
 }else{
     Score=10;
 }
+String myScore;
+myScore=Integer.toString(Score);
+lblScore.setText(myScore);
                 //System.out.print("Correct");
                 JOptionPane.showMessageDialog(null,"Congrats!! You are correct.","Correct",JOptionPane.WARNING_MESSAGE);
-            }else if (counter == 24){
+            }else if (counter == 2){
                 JOptionPane.showMessageDialog(null,"Sorry... you are out of tries.","Incorrect",JOptionPane.WARNING_MESSAGE);
                 btnSubmitAnswer.setEnabled(false);
                 Problem +=1;
